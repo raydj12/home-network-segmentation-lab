@@ -88,3 +88,40 @@ SG2008 Managed Switch
 - IOT → HOME: Blocked using network isolation
 - IOT → LAB: Blocked using network isolation
 - IOT → Internet: Allowed
+
+
+## Validation and Testing
+
+The network was validated using DHCP assignments, ICMP testing, internet connectivity checks, ACL enforcement, and VLAN isolation.
+
+### LAB to HOME ACL Validation
+
+An ACL was created on the ER605 to block traffic from the LAB VLAN to the HOME VLAN while preserving internet access.
+
+![ER605 LAB to HOME ACL](screenshots/41-er605-block-lab-to-home-acl-created.png)
+
+After the ACL was applied, ICMP traffic from LAB to HOME was successfully blocked.
+
+![LAB to HOME traffic blocked](screenshots/42-lab-to-home-ping-blocked-after-acl.png)
+
+### IoT VLAN Validation
+
+VLAN 30 was configured with its own subnet, DHCP scope, and access port.
+
+![IoT VLAN configured](screenshots/44-er605-vlan30-iot-created.png)
+
+Port 5 on the SG2008 was assigned PVID 30 for IoT access.
+
+![IoT port PVID](screenshots/46-sg2008-port5-pvid30.png)
+
+A test device connected to the IoT port successfully received a VLAN 30 address and retained internet access.
+
+![IoT DHCP and internet validation](screenshots/47-vlan30-iot-dhcp-internet-success.png)
+
+The IoT VLAN was then isolated from the other internal networks.
+
+![IoT isolation enabled](screenshots/48-er605-iot-network-isolated.png)
+
+Final testing confirmed that IoT could not reach HOME or LAB.
+
+![IoT isolation validation](screenshots/49-iot-isolation-validation.png)
