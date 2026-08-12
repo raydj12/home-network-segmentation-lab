@@ -79,7 +79,7 @@ SG2008 Managed Switch
    +-- Port 4 -> VLAN 20 LAB  -> Laptop
    |
    +-- Port 5 -> VLAN 30 IOT  -> Future Wireless Access Point / IoT
-
+```
 
 ### Segmentation Policy
 
