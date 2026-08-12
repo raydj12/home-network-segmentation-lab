@@ -79,3 +79,12 @@ SG2008 Managed Switch
    +-- Port 4 -> VLAN 20 LAB  -> Laptop
    |
    +-- Port 5 -> VLAN 30 IOT  -> Future Wireless Access Point / IoT
+
+
+### Segmentation Policy
+
+- LAB → HOME: Blocked using an ER605 ACL
+- LAB → Internet: Allowed
+- IOT → HOME: Blocked using network isolation
+- IOT → LAB: Blocked using network isolation
+- IOT → Internet: Allowed
