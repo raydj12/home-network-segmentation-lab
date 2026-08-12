@@ -19,3 +19,24 @@ The lab was built using a TP-Link ER605 VPN router and a TP-Link SG2008 managed 
 - Fully isolate the IoT VLAN from internal networks
 - Validate segmentation using DHCP, ICMP, and internet connectivity testing
 - Document troubleshooting and configuration results
+
+## Hardware and Software
+
+- TP-Link ER605 Gigabit VPN Router
+- TP-Link SG2008 Managed Switch
+- Windows 11 Desktop PC
+- Windows Laptop
+- PlayStation 5
+- Ethernet cabling
+- TP-Link web management interfaces
+- Windows Command Prompt
+- Windows PowerShell
+- Windows Defender Firewall with Advanced Security
+
+## VLAN and IP Addressing Plan
+
+| VLAN | Name | Subnet | Gateway | DHCP Range | Purpose |
+|---|---|---|---|---|---|
+| 10 | HOME | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.100-199 | Trusted personal devices |
+| 20 | LAB | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.100-199 | Lab and testing systems |
+| 30 | IOT | 192.168.30.0/24 | 192.168.30.1 | 192.168.30.100-199 | IoT devices / future wireless access point |
