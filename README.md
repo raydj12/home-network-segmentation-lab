@@ -128,7 +128,7 @@ Final testing confirmed that IoT could not reach HOME or LAB.
 
 ## Troubleshooting
 
-### ICMP Testing Initially Failed
+### Troubleshooting: ICMP Testing Initially Failed
 
 During validation, ICMP requests between VLANs initially timed out even before the ER605 ACL was applied.
 
@@ -139,3 +139,32 @@ A temporary inbound ICMPv4 rule was created for traffic originating from the LAB
 After the ER605 ACL was applied, the same ping test returned 100% packet loss, proving that the router ACL—not the Windows host firewall—was responsible for blocking LAB-to-HOME traffic.
 
 The temporary Windows firewall rule was removed after testing.
+
+## Skills Demonstrated
+
+- VLAN creation and segmentation
+- IPv4 subnetting and DHCP scope configuration
+- 802.1Q VLAN tagging
+- Access port and trunk configuration
+- PVID assignment
+- Inter-VLAN routing
+- Access Control List (ACL) configuration
+- Network isolation
+- Windows Defender Firewall troubleshooting
+- ICMP connectivity testing
+- Layer 2 and Layer 3 troubleshooting
+- Network documentation and validation
+
+## Final Results
+
+The completed network successfully separates trusted HOME devices, LAB systems, and IoT devices into dedicated VLANs.
+
+- HOME devices operate on VLAN 10
+- LAB systems operate on VLAN 20
+- IoT devices operate on VLAN 30
+- LAB traffic to HOME is blocked by an ER605 ACL
+- IoT traffic to HOME and LAB is blocked through network isolation
+- LAB and IoT networks retain internet access
+- DHCP successfully assigns addresses from each VLAN's dedicated subnet
+
+This project provided hands-on experience designing, implementing, troubleshooting, and validating a segmented network using real networking hardware.
