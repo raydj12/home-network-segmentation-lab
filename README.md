@@ -168,3 +168,15 @@ The completed network successfully separates trusted HOME devices, LAB systems, 
 - DHCP successfully assigns addresses from each VLAN's dedicated subnet
 
 This project provided hands-on experience designing, implementing, troubleshooting, and validating a segmented network using real networking hardware.
+
+## Lessons Learned
+
+- Learned how VLANs separate devices into different broadcast domains.
+- Learned the difference between tagged trunk ports and untagged access ports.
+- Learned how PVIDs determine which VLAN untagged traffic belongs to.
+- Learned how to configure separate DHCP scopes for multiple VLANs.
+- Learned how to create and test ACLs between internal networks.
+- Learned how to create custom Windows Defender Firewall rules for ICMP traffic.
+- Learned how host-based firewalls can affect network troubleshooting and create misleading test results.
+- Learned how to validate segmentation using DHCP, ping tests, and internet connectivity.
+- Learned the importance of documenting configurations and testing each change before moving to the next step.
