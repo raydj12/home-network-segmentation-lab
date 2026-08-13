@@ -125,3 +125,17 @@ The IoT VLAN was then isolated from the other internal networks.
 Final testing confirmed that IoT could not reach HOME or LAB.
 
 ![IoT isolation validation](screenshots/49-iot-isolation-validation.png)
+
+## Troubleshooting
+
+### ICMP Testing Initially Failed
+
+During validation, ICMP requests between VLANs initially timed out even before the ER605 ACL was applied.
+
+The issue was traced to Windows Defender Firewall. The Ethernet connection was using the Public network profile, while the existing ICMP Echo Request rule applied only to the Private profile.
+
+A temporary inbound ICMPv4 rule was created for traffic originating from the LAB subnet (`192.168.20.0/24`). Once enabled, LAB-to-HOME ping tests succeeded, confirming that inter-VLAN routing was functioning correctly.
+
+After the ER605 ACL was applied, the same ping test returned 100% packet loss, proving that the router ACL—not the Windows host firewall—was responsible for blocking LAB-to-HOME traffic.
+
+The temporary Windows firewall rule was removed after testing.
